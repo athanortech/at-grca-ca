@@ -91,12 +91,14 @@
 	--color-fuchsia-950: var(--color-tertiary-950);
 }
 
-/* Modo oscuro: los mismos tonos, un poco más suaves (como hace ciso-theme.css) */
+/* Modo oscuro: tonos claros más vivos y un poco más hacia el celeste. Con poca saturación
+   el azul se ve lavanda sobre fondo oscuro (corregido en at.3). */
 [data-theme='cisotheme'].dark {
-	--color-primary-300: oklch(72% 0.1 259deg);
-	--color-primary-400: oklch(61% 0.13 259deg);
-	--color-primary-500: oklch(51% 0.14 259deg);
-	--color-primary-600: oklch(42.8% 0.13 259deg);
+	--color-primary-200: oklch(84% 0.09 252deg);
+	--color-primary-300: oklch(77% 0.12 253deg);
+	--color-primary-400: oklch(69% 0.16 255deg);
+	--color-primary-500: oklch(59% 0.19 257deg);
+	--color-primary-600: oklch(50% 0.18 259deg);
 	--color-tertiary-400: oklch(69% 0.15 36deg);
 	--color-tertiary-500: oklch(62% 0.16 36deg);
 	--color-tertiary-600: oklch(56% 0.15 36deg);

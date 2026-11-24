@@ -165,7 +165,7 @@
 </script>
 
 <svelte:head>
-	<title>CISO Assistant | {safeTranslate(displayTitle)}</title>
+	<title>AT-GRCA | {safeTranslate(displayTitle)}</title>
 </svelte:head>
 
 <!-- App Shell -->

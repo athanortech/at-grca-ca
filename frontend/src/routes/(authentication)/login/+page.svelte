@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>CISO Assistant | {m.login()}</title>
+	<title>AT-GRCA | {m.login()}</title>
 </svelte:head>
 
 <main class="lg:relative h-screen bg-surface-200-800">

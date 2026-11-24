@@ -754,27 +754,27 @@
 	}
 	.strip {
 		background:
-			radial-gradient(120% 140% at 0% 0%, rgb(124 58 237 / 0.09), transparent 55%),
-			radial-gradient(90% 120% at 100% 100%, rgb(79 70 229 / 0.06), transparent 60%), white;
+			radial-gradient(120% 140% at 0% 0%, color-mix(in oklch, var(--color-primary-500) 9%, transparent), transparent 55%),
+			radial-gradient(90% 120% at 100% 100%, color-mix(in oklch, var(--color-primary-600) 6%, transparent), transparent 60%), white;
 		box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
 	}
 	:global(.dark) .strip {
 		background:
-			radial-gradient(120% 140% at 0% 0%, rgb(139 92 246 / 0.16), transparent 55%),
+			radial-gradient(120% 140% at 0% 0%, color-mix(in oklch, var(--color-primary-500) 16%, transparent), transparent 55%),
 			var(--color-surface-900);
 	}
 	.stat {
 		padding: 1.125rem 1.5rem 1.25rem;
 	}
 	.stat + .stat {
-		border-inline-start: 1px solid rgb(124 58 237 / 0.12);
+		border-inline-start: 1px solid color-mix(in oklch, var(--color-primary-500) 12%, transparent);
 	}
 	@media (max-width: 1023px) {
 		.stat:nth-child(3) {
 			border-inline-start: 0;
 		}
 		.stat:nth-child(n + 3) {
-			border-top: 1px solid rgb(124 58 237 / 0.12);
+			border-top: 1px solid color-mix(in oklch, var(--color-primary-500) 12%, transparent);
 		}
 	}
 	.stat dt {
@@ -835,7 +835,7 @@
 		stroke-width: 5;
 	}
 	.gauge-track {
-		stroke: rgb(124 58 237 / 0.14);
+		stroke: color-mix(in oklch, var(--color-primary-500) 14%, transparent);
 	}
 	.gauge-value {
 		stroke: var(--color-primary-500);

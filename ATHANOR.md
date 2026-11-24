@@ -15,7 +15,11 @@ Solo la apariencia del frontend. El backend se usa sin cambios, con la imagen of
 | `frontend/src/lib/components/Logo/Logo.svelte` | Muestra el logo de Athanor Tech (versión clara y para modo oscuro). |
 | `frontend/src/lib/assets/athanor-logo.png`, `athanor-logo-oscuro.png` (nuevos) | El logo. |
 | `frontend/static/favicon.ico`, `frontend/src/lib/assets/favicon.ico` | El ícono del navegador. |
-| `frontend/messages/es.json`, `en.json` | Tres textos de bienvenida dicen «AT-GRCA» («Esto es AT-GRCA, basado en CISO Assistant»). «Acerca de CISO Assistant» se mantiene. |
+| `frontend/messages/es.json`, `en.json` | Tres textos de bienvenida dicen «AT-GRCA» («Esto es AT-GRCA, basado en CISO Assistant»). «Acerca de CISO Assistant» se mantiene. En `es.json` (at.3): «Catálogo» en vez de «Catalogar», «requisitos no conformes», «Respuestas» (vista del encuestado) y los 24 textos del resumen de inicio que faltaban. |
+| `frontend/src/routes/(app)/+layout.svelte`, `(authentication)/login/+page.svelte`, `quantitative-risk-studies/[id=uuid]/executive-summary/+page.svelte` | El título de la pestaña dice «AT-GRCA» (at.3). |
+| `frontend/src/lib/components/ChatWidget/ChatWidget.svelte` | El asistente de IA se presenta como «AT-GRCA» (at.3). |
+| `frontend/src/routes/(authentication)/login/FormCard.svelte` | El botón de ingreso con SSO es azul lleno, el más visible (at.3). |
+| `frontend/src/routes/(app)/(internal)/analytics/SummaryBriefing.svelte` | El resumen de inicio usa el color primario en vez de morados fijos (at.3). |
 | `.github/workflows/at-grca-frontend.yml` (nuevo) | Arma la imagen `ghcr.io/athanortech/at-grca-ca-frontend` para amd64 y arm64. |
 | `.github/workflows/at-grca-vista-previa.yml` (nuevo) | Levanta CISO Assistant con esa imagen dentro de GitHub y saca capturas para revisar cómo se ve. |
 | `ATHANOR.md` (este archivo) | Explicación de los cambios. |
