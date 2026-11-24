@@ -8,6 +8,7 @@
   Add your theme import for your theme: "ciso-theme" here
 */
 @import '../ciso-theme.css';
+@import './athanor-theme.css'; /* AT-GRCA: colores de Athanor Tech */
 @import '@skeletonlabs/skeleton-svelte';
 
 @source './**/*.{html,js,svelte,ts}';
