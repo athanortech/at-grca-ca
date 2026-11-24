@@ -17,6 +17,7 @@ Solo la apariencia del frontend. El backend se usa sin cambios, con la imagen of
 | `frontend/static/favicon.ico`, `frontend/src/lib/assets/favicon.ico` | El ícono del navegador. |
 | `frontend/messages/es.json`, `en.json` | Tres textos de bienvenida dicen «AT-GRCA» («Esto es AT-GRCA, basado en CISO Assistant»). «Acerca de CISO Assistant» se mantiene. |
 | `.github/workflows/at-grca-frontend.yml` (nuevo) | Arma la imagen `ghcr.io/athanortech/at-grca-ca-frontend` para amd64 y arm64. |
+| `.github/workflows/at-grca-vista-previa.yml` (nuevo) | Levanta CISO Assistant con esa imagen dentro de GitHub y saca capturas para revisar cómo se ve. |
 | `ATHANOR.md` (este archivo) | Explicación de los cambios. |
 
 Las demás acciones de GitHub (`.github/workflows/`) vienen de intuitem y están **desactivadas** en este repositorio.

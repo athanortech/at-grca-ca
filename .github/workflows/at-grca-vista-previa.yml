@@ -1,0 +1,68 @@
+# AT-GRCA: levanta CISO Assistant con la imagen del frontend de Athanor y saca capturas de pantalla
+# (ingreso e inicio, modo claro y oscuro). Todo ocurre dentro de GitHub y se borra al terminar.
+name: AT-GRCA vista previa
+
+on:
+  workflow_dispatch:
+    inputs:
+      etiqueta:
+        description: Etiqueta de la imagen del frontend (por ejemplo v4.3.4-at.1)
+        required: true
+
+jobs:
+  capturas:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Levantar CISO Assistant con nuestra imagen
+        env:
+          ETIQUETA: ${{ inputs.etiqueta }}
+        run: |
+          version="${ETIQUETA%-at.*}"
+          sed -i "s#ghcr.io/intuitem/ciso-assistant-community/backend:latest#ghcr.io/intuitem/ciso-assistant-community/backend:$version#; s#ghcr.io/intuitem/ciso-assistant-community/frontend:latest#ghcr.io/athanortech/at-grca-ca-frontend:$ETIQUETA#" docker-compose.yml
+          grep -n "image:" docker-compose.yml
+          mkdir -p db/caddy && sudo chown -R 1001:1001 db && sudo chmod -R 777 db/caddy
+          docker compose up -d backend huey frontend caddy
+          for i in $(seq 1 60); do
+            curl -skf https://localhost:8443/login >/dev/null && break; sleep 10
+          done
+          curl -skf https://localhost:8443/login >/dev/null
+      - name: Crear un usuario de prueba (solo en esta máquina de GitHub)
+        run: |
+          echo "CLAVE=$(openssl rand -hex 16)" >> "$GITHUB_ENV"
+      - name: Crear el usuario
+        run: |
+          docker compose exec -T -e DJANGO_SUPERUSER_PASSWORD="$CLAVE" backend python manage.py createsuperuser --noinput --email prueba@at-grca.test
+      - name: Sacar capturas
+        run: |
+          pip install -q playwright==1.49.1 && python -m playwright install --with-deps chromium >/dev/null
+          python - <<'PY'
+          import os
+          from playwright.sync_api import sync_playwright
+          os.makedirs('capturas', exist_ok=True)
+          with sync_playwright() as p:
+              b = p.chromium.launch()
+              for modo in ('light', 'dark'):
+                  c = b.new_context(ignore_https_errors=True, locale='es-CL', color_scheme=modo, viewport={'width': 1440, 'height': 900})
+                  pg = c.new_page()
+                  pg.goto('https://localhost:8443/login'); pg.wait_for_load_state('networkidle')
+                  pg.screenshot(path=f'capturas/1-ingreso-{modo}.png')
+                  pg.fill('input[name=username]', 'prueba@at-grca.test')
+                  pg.fill('input[name=password]', os.environ['CLAVE'])
+                  pg.click('[data-testid=login-btn]')
+                  pg.wait_for_url('**/analytics**', timeout=60000); pg.wait_for_load_state('networkidle'); pg.wait_for_timeout(3000)
+                  for sel in ('text=Omitir', 'text=Skip', 'button[aria-label=Close]'):
+                      try: pg.click(sel, timeout=1500)
+                      except Exception: pass
+                  pg.screenshot(path=f'capturas/2-inicio-{modo}.png')
+                  pg.goto('https://localhost:8443/libraries'); pg.wait_for_load_state('networkidle'); pg.wait_for_timeout(2000)
+                  pg.screenshot(path=f'capturas/3-bibliotecas-{modo}.png')
+                  c.close()
+              b.close()
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: capturas
+          path: capturas/
+          retention-days: 7
