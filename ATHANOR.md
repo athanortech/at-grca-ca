@@ -10,7 +10,7 @@ Solo la apariencia del frontend. El backend se usa sin cambios, con la imagen of
 
 | Archivo | Cambio |
 |---|---|
-| `frontend/src/athanor-theme.css` (nuevo) | Colores de Athanor Tech: azul #0048A8 como primario y naranja #E34B1D como acento; los morados fijos pasan al azul. |
+| `frontend/src/athanor-theme.css` (nuevo) | Colores de Athanor Tech: azul #0048A8 como primario y naranja #E34B1D como acento; los morados y rosados fijos pasan a tonos de azul, y el fucsia al naranja. |
 | `frontend/src/app.css` | Una línea que carga `athanor-theme.css` después del tema de CISO Assistant. |
 | `frontend/src/lib/components/Logo/Logo.svelte` | Muestra el logo de Athanor Tech (versión clara y para modo oscuro). |
 | `frontend/src/lib/assets/athanor-logo.png`, `athanor-logo-oscuro.png` (nuevos) | El logo. |

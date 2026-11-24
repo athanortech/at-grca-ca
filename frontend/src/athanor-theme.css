@@ -65,6 +65,30 @@
 	--color-indigo-800: var(--color-primary-800);
 	--color-indigo-900: var(--color-primary-900);
 	--color-indigo-950: var(--color-primary-950);
+	/* Rosado (títulos con degradado «rosado → morado»): pasa a un azul más claro, para que el título
+	   quede en degradado de azules. Fucsia (acentos): pasa al naranja Athanor. */
+	--color-pink-50: var(--color-primary-50);
+	--color-pink-100: var(--color-primary-50);
+	--color-pink-200: var(--color-primary-100);
+	--color-pink-300: var(--color-primary-200);
+	--color-pink-400: var(--color-primary-300);
+	--color-pink-500: var(--color-primary-400);
+	--color-pink-600: var(--color-primary-500);
+	--color-pink-700: var(--color-primary-600);
+	--color-pink-800: var(--color-primary-700);
+	--color-pink-900: var(--color-primary-800);
+	--color-pink-950: var(--color-primary-900);
+	--color-fuchsia-50: var(--color-tertiary-50);
+	--color-fuchsia-100: var(--color-tertiary-100);
+	--color-fuchsia-200: var(--color-tertiary-200);
+	--color-fuchsia-300: var(--color-tertiary-300);
+	--color-fuchsia-400: var(--color-tertiary-400);
+	--color-fuchsia-500: var(--color-tertiary-500);
+	--color-fuchsia-600: var(--color-tertiary-600);
+	--color-fuchsia-700: var(--color-tertiary-700);
+	--color-fuchsia-800: var(--color-tertiary-800);
+	--color-fuchsia-900: var(--color-tertiary-900);
+	--color-fuchsia-950: var(--color-tertiary-950);
 }
 
 /* Modo oscuro: los mismos tonos, un poco más suaves (como hace ciso-theme.css) */
