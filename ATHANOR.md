@@ -15,7 +15,10 @@ Solo la apariencia del frontend. El backend se usa sin cambios, con la imagen of
 | `frontend/src/lib/components/Logo/Logo.svelte` | Muestra el logo de Athanor Tech (versión clara y para modo oscuro). |
 | `frontend/src/lib/assets/athanor-logo.png`, `athanor-logo-oscuro.png` (nuevos) | El logo. |
 | `frontend/static/favicon.ico`, `frontend/src/lib/assets/favicon.ico` | El ícono del navegador. |
-| `frontend/messages/es.json`, `en.json` | Tres textos de bienvenida dicen «AT-GRCA» («Esto es AT-GRCA, basado en CISO Assistant»). «Acerca de CISO Assistant» se mantiene. En `es.json` (at.3): «Catálogo» en vez de «Catalogar», «requisitos no conformes», «Respuestas» (vista del encuestado) y los 24 textos del resumen de inicio que faltaban. |
+| `frontend/messages/es.json`, `en.json` | Saludo del ingreso (at.4): «Te damos la bienvenida a AT-GRCA. Gobierno, riesgo y cumplimiento, **en un solo lugar.**»; «Acerca de AT-GRCA»; dos textos nuevos para el pie del ingreso (`atgrcaPoweredBy`, `atgrcaSourceCode`). En `es.json` (at.3): «Catálogo» en vez de «Catalogar», «requisitos no conformes», «Respuestas» (vista del encuestado) y los 24 textos del resumen de inicio que faltaban. |
+| `frontend/src/routes/(authentication)/login/+page.svelte` | Pie del ingreso (at.4): «AT-GRCA usa CISO Assistant Community, de intuitem, con licencia AGPL-3.0» y enlace al código fuente de este repositorio. |
+| `frontend/src/lib/components/SideBar/SideBarFooter.svelte` | «Acerca de AT-GRCA» muestra producto, base (CISO Assistant Community, AGPL-3.0) y enlace al código fuente (at.4). |
+| `frontend/src/routes/(authentication)/first-connexion/+page.svelte` | Sin los puntos que se agregaban al saludo (at.4). |
 | `frontend/src/routes/(app)/+layout.svelte`, `(authentication)/login/+page.svelte`, `quantitative-risk-studies/[id=uuid]/executive-summary/+page.svelte` | El título de la pestaña dice «AT-GRCA» (at.3). |
 | `frontend/src/lib/components/ChatWidget/ChatWidget.svelte` | El asistente de IA se presenta como «AT-GRCA» (at.3). |
 | `frontend/src/routes/(authentication)/login/FormCard.svelte` | El botón de ingreso con SSO es azul lleno, el más visible (at.3). |

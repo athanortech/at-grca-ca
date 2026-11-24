@@ -33,4 +33,16 @@
 			</div>
 		</div>
 	</div>
+	<!-- AT-GRCA: crédito a CISO Assistant y enlace al código fuente (AGPL-3.0) -->
+	<p
+		class="lg:absolute bottom-3 inset-x-0 text-center text-xs text-surface-600-400 px-4 py-4 lg:py-0"
+	>
+		{m.atgrcaPoweredBy()}
+		<a
+			href="https://github.com/athanortech/at-grca-ca"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="underline hover:text-primary-600-400">{m.atgrcaSourceCode()}</a
+		>
+	</p>
 </main>

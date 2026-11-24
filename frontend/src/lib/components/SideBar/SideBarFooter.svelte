@@ -28,7 +28,12 @@
 			type: 'component',
 			component: 'displayJSONModal',
 			title: m.aboutCiso(),
-			body: JSON.stringify(res)
+			body: JSON.stringify({
+				producto: 'AT-GRCA (Athanor Tech)',
+				basado_en: 'CISO Assistant Community, de intuitem (AGPL-3.0)',
+				codigo_fuente: 'https://github.com/athanortech/at-grca-ca',
+				...res
+			})
 		};
 		openState = false;
 		modalStore.trigger(modal);
