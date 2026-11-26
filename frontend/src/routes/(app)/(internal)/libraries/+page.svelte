@@ -155,6 +155,7 @@
 		URLModel="stored-libraries"
 		deleteForm={data.deleteForm}
 		defaultFilters={{ locale: [{ value: 'es' }] }}
+		orderBy={{ identifier: 'is_loaded,urn', direction: 'desc' }}
 	>
 		{#snippet quickFilters(filterValues, form, invalidateTable)}
 			<div
