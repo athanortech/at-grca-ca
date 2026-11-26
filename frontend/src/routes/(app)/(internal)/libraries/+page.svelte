@@ -154,6 +154,7 @@
 		source={data.storedLibrariesTable}
 		URLModel="stored-libraries"
 		deleteForm={data.deleteForm}
+		defaultFilters={{ locale: [{ value: 'es' }] }}
 	>
 		{#snippet quickFilters(filterValues, form, invalidateTable)}
 			<div
